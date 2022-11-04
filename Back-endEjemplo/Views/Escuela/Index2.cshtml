@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index2</h2>
+
+Mi Nombre es: <b>@ViewData["Nombre"]</b> 
+Mi correo es: <b>@ViewData["Correo"]</b>
+La fecha es: <b>@(((DateTime)ViewData["Fecha"]).ToLongDateString())</b>
+

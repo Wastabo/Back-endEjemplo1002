@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="jumbotron">
+    <button type="button" id="btnGaraje">Carga Garaje</button>
+    <button type="button" id="btnGarajeSimple">Carga Garaje Simple</button>
+    <button type="button" id="btnLimpiar">Limpiar Datos</button>
+</div>
+
+<div id="divGaraje"></div>
+@section scripts{
+    <script>
+        console.log("dentro")
+        $(document).ready(function () {
+            $("#btnGaraje").click(function () {
+                $("#divGaraje").load("_Garaje");
+            });
+            $("#btnGarajeSimple").click(function () {
+                $("#divGaraje").load("_GarajeSimple");
+            });
+            $("#btnLimpiar").click(function () {
+                $("#divGaraje").html("");
+            });
+        });
+    </script>
+    }
+

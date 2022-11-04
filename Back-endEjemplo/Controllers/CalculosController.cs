@@ -1,6 +1,8 @@
 ﻿using Back_endEjemplo.Models;
+using Back_endEjemplo.Services;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -45,5 +47,29 @@ namespace Back_endEjemplo.Controllers
             op.Resta();
             return View(op);
         }
+
+        public ActionResult MuestraPeliculas()
+        {
+            var peliculaservice = new PeliculasServices();
+            var model = peliculaservice.ObtenerPeliculas();
+            return View(model);
+        }
+
+        public ActionResult MuestraPeliculas2()
+        {
+            var peliculaservice = new PeliculasServices();
+            var model = peliculaservice.ObtenerPeliculas();
+            return View(model);
+        }
+
+        public /*ContentResult*//*JsonResult*//*ActionResult*//*RedirectResult*/RedirectToRouteResult Temporal()
+        {
+            //var alumno1 = new Alumno() { Nombre = "Juan", Edad = 20 };
+            //return Content("<h1>Hola Mundo Soy Gustavo!</h1>");
+            //return Json(alumno1, JsonRequestBehavior.AllowGet);
+            //return Redirect("https://Google.com.mx");
+            return RedirectToAction("About", "Home");
+        }
+
     }
 }
